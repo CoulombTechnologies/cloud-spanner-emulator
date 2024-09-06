@@ -181,7 +181,7 @@ absl::Status ChangeStreamsHandler::ExecuteInitialQuery(
         "WHERE '$1' >= start_time AND ( end_time IS NULL OR '$1' < end_time "
         ")  ORDER BY (partition_token)",
         partition_table_, 
-        absl::FormatTime(metadata().start_timestamp, absl::UTCTimeZone())};
+        absl::FormatTime(metadata().start_timestamp, absl::UTCTimeZone()))};
     initial_query.change_stream_internal_lookup = metadata().change_stream_name;
     ZETASQL_ASSIGN_OR_RETURN(auto partition_results, txn->ExecuteSql(initial_query));
     // Initial query is guaranteed to return at least 1 child partition record.
@@ -273,7 +273,7 @@ backend::Query ChangeStreamsHandler::ConstructDataTablePartitionQuery(
       metadata().data_table, metadata().partition_token.value(), 
       absl::FormatTime(start, absl::UTCTimeZone()),
       is_inclusive_read ? "<=" : "<", 
-      absl::FormatTime(end, absl::UTCTimeZone())};
+      absl::FormatTime(end, absl::UTCTimeZone()))};
   data_table_partition_query.change_stream_internal_lookup =
       metadata().change_stream_name;
   return data_table_partition_query;
