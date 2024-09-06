@@ -66,6 +66,7 @@ go_library(
     name = "gateway",
     srcs = ["gateway.go"],
     importpath = "cloud_spanner_emulator/gateway",
+    visibility = ["//visibility:public"],
     deps = [
         ":longrunning_operations_gateway",
         ":spanner_admin_database_gateway",
