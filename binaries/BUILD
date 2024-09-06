@@ -41,5 +41,6 @@ go_binary(
     data = [
         ":emulator_main",
     ],
+    visibility = ["//visibility:public"],
     deps = ["//gateway"],
 )
