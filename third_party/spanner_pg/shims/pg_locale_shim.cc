@@ -36,6 +36,7 @@
 // to initialize it.
 #include "third_party/spanner_pg/shims/pg_locale_shim.h"
 
+#include <cstdlib>
 #include <stddef.h>
 #include <string.h>
 #include <time.h>

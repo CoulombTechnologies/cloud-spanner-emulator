@@ -71,7 +71,7 @@ def spangres_error_catalog(
         outs = [h_file, cc_file],
         cmd = (
             "$(location //third_party/spanner_pg/errors:error_generator)" +
-            " --google3_root=$(GENDIR)" +
+            " --google3_root=$(GENDIR)/external/com_google_cloud_spanner_emulator" +
             " --package=" + package +
             " --namespace=" + namespace +
             " --file_basename=" + name +

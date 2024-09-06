@@ -455,8 +455,8 @@ foreach my $catname (@catnames)
 	if ($catname eq "pg_proc")
 	{
 		print $header "typedef struct { ";
-		print $header "FormData_${catname} data; ";
 		print $header "Oid do_not_access_directly__flexible_array_storage[$max_proc_args]; ";
+		print $header "FormData_${catname} data; ";
 		print $header "} FormData_${catname}_WithArgTypes;\n";
 		print $header "extern const FormData_${catname}_WithArgTypes ${catname}_data[];\n";
 	}
