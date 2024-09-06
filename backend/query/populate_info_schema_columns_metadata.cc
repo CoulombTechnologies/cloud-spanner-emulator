@@ -53,7 +53,7 @@ std::string GetMetadataFileByDialect(const DatabaseDialect& dialect,
   }
 
   constexpr absl::string_view kInfoSchemaColumnsMetadataPath =
-      "backend/query/";
+      "external/com_google_cloud_spanner_emulator/backend/query/";
   return absl::StrCat(kInfoSchemaColumnsMetadataPath, metadata_file);
 }
 
@@ -185,7 +185,7 @@ SpannerSysColumnsMetadata() {
 
   // clang-format off
   constexpr absl::string_view kSpannerSysColumnsMetadata =
-      "backend/query/spanner_sys_columns_metadata.csv"; // NOLINT
+      "external/com_google_cloud_spanner_emulator/backend/query/spanner_sys_columns_metadata.csv"; // NOLINT
   // clang-format on
   CsvReaderBase::Options options;
   options.set_field_separator(kCsvSeparator);
@@ -227,7 +227,7 @@ std::string PopulatePGCatalogColumnsMetadata() {
 
   // clang-format off
   constexpr absl::string_view kPGCatalogColumnsMetadata =
-      "backend/query/pg_catalog_columns_metadata.csv"; // NOLINT
+      "external/com_google_cloud_spanner_emulator/backend/query/pg_catalog_columns_metadata.csv"; // NOLINT
   // clang-format on
   CsvReaderBase::Options options;
   options.set_field_separator(kCsvSeparator);
